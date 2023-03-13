@@ -1,4 +1,5 @@
 import 'package:graphs/data_structs/graph.dart';
+import 'package:graphs/data_structs/inode.dart';
 import 'package:graphs/data_structs/simple_binary_node.dart';
 import 'package:graphs/utils/logger.dart';
 
@@ -15,5 +16,5 @@ abstract class TraversalAlgorithm {
     Logger.logMsg("Weight: $weight");
   }
 
-  int findWeights(SimpleBinaryNode start);
+  int findWeights(INode start);
 }

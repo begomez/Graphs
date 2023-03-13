@@ -1,12 +1,13 @@
 import 'dart:convert';
 
+import 'package:graphs/data_structs/inode.dart';
 import 'package:graphs/data_structs/simple_binary_node.dart';
 import 'package:graphs/utils/io_utils.dart';
 import 'package:graphs/utils/logger.dart';
 
 /// Collection of nodes
 class Graph {
-  final List<SimpleBinaryNode> nodes;
+  final List<INode> nodes;
 
   const Graph(this.nodes) : super();
 
@@ -33,7 +34,7 @@ class Graph {
     }
   }
 
-  List<SimpleBinaryNode> getNodes() => nodes;
+  List<INode> getNodes() => nodes;
 
-  SimpleBinaryNode getInitial() => nodes[0];
+  INode getInitial() => nodes[0];
 }
