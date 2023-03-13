@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:graphs/algor/base/traversal_algorithm.dart';
 import 'package:graphs/data_structs/graph.dart';
+import 'package:graphs/data_structs/inode.dart';
 import 'package:graphs/data_structs/queue_item.dart';
 import 'package:graphs/data_structs/simple_binary_node.dart';
 
@@ -16,7 +17,7 @@ class IterativeTraversalAlgorithm extends TraversalAlgorithm {
     if (start == null) {
       return result;
     } else {
-      SimpleBinaryNode actualNode;
+      INode actualNode;
       int actualDepth = 0;
       final queue = Queue<QueueItem>();
 
@@ -28,22 +29,22 @@ class IterativeTraversalAlgorithm extends TraversalAlgorithm {
         actualNode = actualItem.node;
         actualDepth = actualItem.depth;
 
-        debug.addAll({actualNode.name: actualDepth});
+        debug.addAll({actualNode.value(): actualDepth});
 
         if (actualNode.hasLeft()) {
-          debug.addAll({actualNode.left!.name: actualDepth + 1});
+          debug.addAll({actualNode.left!.value(): actualDepth + 1});
           queue.add(QueueItem(node: actualNode.left!, depth: actualDepth + 1));
           continue;
         }
 
         if (actualNode.hasRight()) {
-          debug.addAll({actualNode.right!.name: actualDepth + 1});
+          debug.addAll({actualNode.right!.value(): actualDepth + 1});
           queue.add(QueueItem(node: actualNode.right!, depth: actualDepth + 1));
           continue;
         }
 
         if (actualNode.isLeaf()) {
-          debug.addAll({actualNode.name: actualDepth});
+          debug.addAll({actualNode.value(): actualDepth});
           break;
         }
       }

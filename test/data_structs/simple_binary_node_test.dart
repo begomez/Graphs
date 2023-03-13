@@ -34,8 +34,7 @@ void main() {
 
       expect(actual.id, expected.id);
       expect(actual.name, expected.name);
-      expect(actual.left!.id, expected.left!.id);
-      expect(actual.left!.name, expected.left!.name);
+      expect(actual.left!.value(), expected.left!.value());
       expect(actual.left!.left, expected.left!.left);
       expect(actual.left!.right, expected.left!.right);
       expect(actual.right, expected.right);

@@ -1,14 +1,17 @@
+import 'package:graphs/data_structs/inode.dart';
+
 /// Node with left, right children that stores
 /// some primitive props
-class SimpleBinaryNode {
+class SimpleBinaryNode extends INode {
   final String id;
   final String name;
-  final SimpleBinaryNode? left;
-  final SimpleBinaryNode? right;
 
   const SimpleBinaryNode(
-      {required this.id, required this.name, this.left, this.right})
-      : super();
+      {required this.id,
+      required this.name,
+      SimpleBinaryNode? left,
+      SimpleBinaryNode? right})
+      : super(left: left, right: right);
 
   factory SimpleBinaryNode.fromJson(Map<String, dynamic> json) =>
       SimpleBinaryNode(
@@ -22,6 +25,7 @@ class SimpleBinaryNode {
             : null,
       );
 
+  @override
   Map<String, dynamic> toJson() => {
         _SimpleNodeProps.id: id,
         _SimpleNodeProps.name: name,
@@ -30,15 +34,10 @@ class SimpleBinaryNode {
       };
 
   @override
-  String toString() => "${toJson().toString()}\n";
+  String toString() => "$id $name";
 
-  bool isLeaf() => !_has(left) && !_has(right);
-
-  bool hasLeft() => _has(left);
-
-  bool hasRight() => _has(right);
-
-  bool _has(SimpleBinaryNode? node) => node != null;
+  @override
+  String value() => name;
 }
 
 class _SimpleNodeProps {
