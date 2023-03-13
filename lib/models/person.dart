@@ -1,4 +1,4 @@
-import 'package:graphs/data_structs/iserial.dart';
+import 'package:graphs/models/iserial.dart';
 
 class Person implements ISerial<Person> {
   final int age;

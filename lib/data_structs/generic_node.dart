@@ -1,4 +1,4 @@
-import 'package:graphs/data_structs/iserial.dart';
+import 'package:graphs/models/iserial.dart';
 
 /// Binary node containing a generic data type T
 class GenericNode<T extends ISerial> {
