@@ -9,26 +9,37 @@ class RecursiveTraversalAlgorithm extends TraversalAlgorithm {
   RecursiveTraversalAlgorithm({required Graph graph}) : super(graph: graph);
 
   @override
-  int findMinDepth(SimpleNode? start) {
+  int findWeights(SimpleNode? start) {
     // NO NODE
     if (start == null) {
       return 0;
 
       // LEAF
     } else if (start.isLeaf()) {
+      debug.addAll({start.name: 1});
+
       return 1;
 
       // ONLY RIGHT SUBTREE
     } else if (!start.hasLeft()) {
-      return 1 + findMinDepth(start.right);
+      int result = 1 + findWeights(start.right);
+      debug.addAll({start.name: result});
+
+      return result;
 
       // ONLY LEFT SUBTREE
     } else if (!start.hasRight()) {
-      return 1 + findMinDepth(start.left);
+      int result = 1 + findWeights(start.left);
+      debug.addAll({start.name: result});
+
+      return result;
 
       // BOTH
     } else {
-      return 1 + min(findMinDepth(start.left), findMinDepth(start.right));
+      int result = 1 + max(findWeights(start.left), findWeights(start.right));
+      debug.addAll({start.name: result});
+
+      return result;
     }
   }
 }
