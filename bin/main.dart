@@ -8,7 +8,7 @@ import 'package:graphs/data_structs/graph.dart';
 void main(List<String> arguments) {
   final graph = Graph.fromFile('connex_binary_tree.json');
 
-  final algor = RecursiveTraversalAlgorithm(graph: graph);
+  final algor = IterativeTraversalAlgorithm(graph: graph);
 
   algor.traverse();
 }
