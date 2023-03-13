@@ -1,4 +1,4 @@
-import 'package:graphs/models/simple_node.dart';
+import 'package:graphs/data_structs/simple_node.dart';
 
 class QueueItem {
   final SimpleNode node;

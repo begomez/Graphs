@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:graphs/algor/base/traversal_algorithm.dart';
-import 'package:graphs/models/graph.dart';
-import 'package:graphs/models/simple_node.dart';
+import 'package:graphs/data_structs/graph.dart';
+import 'package:graphs/data_structs/simple_node.dart';
 
 /// Class encapsulating node traversal through recursivity
 class RecursiveTraversalAlgorithm extends TraversalAlgorithm {

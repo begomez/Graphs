@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:graphs/models/simple_node.dart';
+import 'package:graphs/data_structs/simple_node.dart';
 import 'package:graphs/utils/io_utils.dart';
 import 'package:graphs/utils/logger.dart';
 
