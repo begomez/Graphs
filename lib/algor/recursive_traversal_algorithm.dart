@@ -36,7 +36,7 @@ class RecursiveTraversalAlgorithm extends TraversalAlgorithm {
 
       // BOTH
     } else {
-      int result = 1 + max(findWeights(start.left), findWeights(start.right));
+      int result = 1 + min(findWeights(start.left), findWeights(start.right));
       debug.addAll({start.name: result});
 
       return result;

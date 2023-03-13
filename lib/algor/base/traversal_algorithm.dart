@@ -11,7 +11,7 @@ abstract class TraversalAlgorithm {
 
   void traverse() {
     int weight = findWeights(graph.getInitial());
-    print(debug);
+    Logger.logMsg("Debug: ${debug.toString()}");
     Logger.logMsg("Weight: $weight");
   }
 

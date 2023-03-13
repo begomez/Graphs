@@ -1,3 +1,4 @@
+import 'package:graphs/algor/iterative_traversal_algorithm.dart';
 import 'package:graphs/algor/recursive_traversal_algorithm.dart';
 import 'package:graphs/models/graph.dart';
 
@@ -5,7 +6,7 @@ import 'package:graphs/models/graph.dart';
 void main(List<String> arguments) {
   final graph = Graph.fromFile('connex_binary_tree.json');
 
-  final algor = RecursiveTraversalAlgorithm(graph: graph);
+  final algor = IterativeTraversalAlgorithm(graph: graph);
 
   algor.traverse();
 }
