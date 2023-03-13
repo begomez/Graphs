@@ -1,5 +1,5 @@
 import 'package:graphs/data_structs/graph.dart';
-import 'package:graphs/data_structs/simple_node.dart';
+import 'package:graphs/data_structs/simple_binary_node.dart';
 import 'package:graphs/utils/logger.dart';
 
 /// Abstraction class used to generalize traversing a list of nodes
@@ -15,5 +15,5 @@ abstract class TraversalAlgorithm {
     Logger.logMsg("Weight: $weight");
   }
 
-  int findWeights(SimpleNode start);
+  int findWeights(SimpleBinaryNode start);
 }

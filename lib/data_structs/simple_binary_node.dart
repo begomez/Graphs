@@ -1,22 +1,24 @@
-/// Binary node containing primitive data types
-class SimpleNode {
+/// Node with left, right children that stores
+/// some primitive props
+class SimpleBinaryNode {
   final String id;
   final String name;
-  final SimpleNode? left;
-  final SimpleNode? right;
+  final SimpleBinaryNode? left;
+  final SimpleBinaryNode? right;
 
-  const SimpleNode(
+  const SimpleBinaryNode(
       {required this.id, required this.name, this.left, this.right})
       : super();
 
-  factory SimpleNode.fromJson(Map<String, dynamic> json) => SimpleNode(
+  factory SimpleBinaryNode.fromJson(Map<String, dynamic> json) =>
+      SimpleBinaryNode(
         id: json[_SimpleNodeProps.id],
         name: json[_SimpleNodeProps.name],
         left: json[_SimpleNodeProps.left] != null
-            ? SimpleNode.fromJson(json[_SimpleNodeProps.left])
+            ? SimpleBinaryNode.fromJson(json[_SimpleNodeProps.left])
             : null,
         right: json[_SimpleNodeProps.right] != null
-            ? SimpleNode.fromJson(json[_SimpleNodeProps.right])
+            ? SimpleBinaryNode.fromJson(json[_SimpleNodeProps.right])
             : null,
       );
 
@@ -36,7 +38,7 @@ class SimpleNode {
 
   bool hasRight() => _has(right);
 
-  bool _has(SimpleNode? node) => node != null;
+  bool _has(SimpleBinaryNode? node) => node != null;
 }
 
 class _SimpleNodeProps {

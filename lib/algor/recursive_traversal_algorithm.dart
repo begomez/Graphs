@@ -2,14 +2,14 @@ import 'dart:math';
 
 import 'package:graphs/algor/base/traversal_algorithm.dart';
 import 'package:graphs/data_structs/graph.dart';
-import 'package:graphs/data_structs/simple_node.dart';
+import 'package:graphs/data_structs/simple_binary_node.dart';
 
 /// Class encapsulating node traversal through recursivity
 class RecursiveTraversalAlgorithm extends TraversalAlgorithm {
   RecursiveTraversalAlgorithm({required Graph graph}) : super(graph: graph);
 
   @override
-  int findWeights(SimpleNode? start) {
+  int findWeights(SimpleBinaryNode? start) {
     // NO NODE
     if (start == null) {
       return 0;
