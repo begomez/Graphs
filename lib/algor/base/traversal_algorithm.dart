@@ -1,6 +1,5 @@
 import 'package:graphs/data_structs/graph.dart';
 import 'package:graphs/data_structs/inode.dart';
-import 'package:graphs/data_structs/simple_binary_node.dart';
 import 'package:graphs/utils/logger.dart';
 
 /// Abstraction class used to generalize traversing a list of nodes

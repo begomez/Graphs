@@ -10,7 +10,7 @@ void main() {
           left: GenericBinaryNode<Person>(data: Person(26, "Jane")));
 
       expect(actual.data, Person(25, "John"));
-      expect(actual.left!.data, Person(26, "Jane"));
+      expect(actual.left!.value(), "Name: Jane Age: 26");
       expect(actual.right, null);
     });
   });

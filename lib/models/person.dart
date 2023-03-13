@@ -30,7 +30,7 @@ class Person implements ISerial<Person> {
   int get hashCode => age.hashCode ^ name.hashCode;
 
   @override
-  String toString() => "name: $name age: $age";
+  String toString() => "Name: $name Age: $age";
 }
 
 abstract class _PersonProps {

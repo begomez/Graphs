@@ -1,14 +1,14 @@
+import 'package:graphs/data_structs/inode.dart';
 import 'package:graphs/models/iserial.dart';
 
 /// Node with left, right children that stores
 /// a serializable object
-class GenericBinaryNode<T extends ISerial> {
+class GenericBinaryNode<T extends ISerial> extends INode {
   final T data;
-  final GenericBinaryNode<T>? left;
-  final GenericBinaryNode<T>? right;
 
-  const GenericBinaryNode({required this.data, this.left, this.right})
-      : super();
+  const GenericBinaryNode(
+      {required this.data, GenericBinaryNode? left, GenericBinaryNode? right})
+      : super(left: left, right: right);
 
   GenericBinaryNode<T> fromJson(Map<String, dynamic> map) =>
       GenericBinaryNode<T>(
@@ -21,6 +21,7 @@ class GenericBinaryNode<T extends ISerial> {
             : null,
       );
 
+  @override
   Map<String, dynamic> toJson() => {
         _GenericBinaryNodeProps.value: data.toJson(),
         _GenericBinaryNodeProps.left: hasLeft() ? left!.toJson() : null,
@@ -30,13 +31,8 @@ class GenericBinaryNode<T extends ISerial> {
   @override
   String toString() => "${toJson().toString()}\n";
 
-  bool isLeaf() => !_has(left) && !_has(right);
-
-  bool hasLeft() => _has(left);
-
-  bool hasRight() => _has(right);
-
-  bool _has(GenericBinaryNode? node) => node != null;
+  @override
+  String value() => data.toString();
 }
 
 class _GenericBinaryNodeProps {
