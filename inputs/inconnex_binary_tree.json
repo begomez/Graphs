@@ -1,0 +1,43 @@
+[
+    {
+      "id": "1",
+      "name": "Node A",
+      "left": {
+        "id": "2",
+        "name": "Node B",
+        "left": {
+          "id": "3",
+          "name": "Node C",
+          "left": null,
+          "right": null
+        },
+        "right": {
+          "id": "4",
+          "name": "Node D",
+          "left": null,
+          "right": null
+        }
+      },
+      "right": {
+        "id": "5",
+        "name": "Node E",
+        "left": null,
+        "right": null
+      }
+    },
+    {
+      "id": "6",
+      "name": "Node F",
+      "left": null,
+      "right": {
+        "id": "7",
+        "name": "Node G",
+        "left": null,
+        "right": null
+      }
+    }
+  ]
+  
+  
+  
+  
