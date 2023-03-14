@@ -9,7 +9,7 @@ class RecursiveBinaryTraversal extends ITraversalAlgorithm<IBinaryNode> {
   RecursiveBinaryTraversal({required IBaseGraph graph}) : super(graph: graph);
 
   @override
-  int findWeights(IBinaryNode? start) {
+  int visitNode(IBinaryNode? start) {
     // NO NODE
     if (start == null) {
       return 0;
@@ -22,21 +22,21 @@ class RecursiveBinaryTraversal extends ITraversalAlgorithm<IBinaryNode> {
 
       // ONLY RIGHT SUBTREE
     } else if (!start.hasLeft()) {
-      int result = 1 + findWeights(start.right);
+      int result = 1 + visitNode(start.right);
       debug.addAll({start.value(): result});
 
       return result;
 
       // ONLY LEFT SUBTREE
     } else if (!start.hasRight()) {
-      int result = 1 + findWeights(start.left);
+      int result = 1 + visitNode(start.left);
       debug.addAll({start.value(): result});
 
       return result;
 
       // BOTH
     } else {
-      int result = 1 + min(findWeights(start.left), findWeights(start.right));
+      int result = 1 + min(visitNode(start.left), visitNode(start.right));
       debug.addAll({start.value(): result});
 
       return result;

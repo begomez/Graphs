@@ -113,7 +113,7 @@ void main() {
       final obj = RecursiveBinaryTraversal(graph: fakeGraphValid);
 
       int expected = 2;
-      int actual = obj.findWeights(fakeGraphValid.getRootNode());
+      int actual = obj.visitNode(fakeGraphValid.getRootNode());
 
       expect(actual, expected);
     });
@@ -121,7 +121,7 @@ void main() {
     test('When traversing empty graph then error thrown', () {
       final obj = RecursiveBinaryTraversal(graph: fakeGraphEmpty);
 
-      final actual = obj.findWeights;
+      final actual = obj.visitNode;
 
       expect(
           () => actual.call(fakeGraphEmpty.getRootNode()),
@@ -134,7 +134,7 @@ void main() {
       final obj = RecursiveBinaryTraversal(graph: fakeGraphUnary);
 
       final expected = 1;
-      final actual = obj.findWeights(fakeGraphUnary.getRootNode());
+      final actual = obj.visitNode(fakeGraphUnary.getRootNode());
 
       expect(actual, expected);
     });
@@ -143,7 +143,7 @@ void main() {
       final obj = RecursiveBinaryTraversal(graph: fakeGraphOnlyLeft);
 
       final expected = 2;
-      final actual = obj.findWeights(fakeGraphOnlyLeft.getRootNode());
+      final actual = obj.visitNode(fakeGraphOnlyLeft.getRootNode());
 
       expect(actual, expected);
     });
@@ -152,7 +152,7 @@ void main() {
       final obj = RecursiveBinaryTraversal(graph: fakeGraphOnlyRight);
 
       final expected = 2;
-      final actual = obj.findWeights(fakeGraphOnlyRight.getRootNode());
+      final actual = obj.visitNode(fakeGraphOnlyRight.getRootNode());
 
       expect(actual, expected);
     });
@@ -161,7 +161,7 @@ void main() {
       final obj = RecursiveBinaryTraversal(graph: fakeGraphInconnex);
 
       final expected = 1;
-      final actual = obj.findWeights(fakeGraphInconnex.getRootNode());
+      final actual = obj.visitNode(fakeGraphInconnex.getRootNode());
 
       expect(actual, expected);
     });
@@ -170,7 +170,7 @@ void main() {
       final obj = RecursiveBinaryTraversal(graph: fakeGraphInconnex);
 
       final expected = 0;
-      final actual = obj.findWeights(null);
+      final actual = obj.visitNode(null);
 
       expect(actual, expected);
     });

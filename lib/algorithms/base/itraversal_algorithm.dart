@@ -10,7 +10,7 @@ abstract class ITraversalAlgorithm<T> {
 
   void traverse() {
     int timeStart = DateTime.now().millisecondsSinceEpoch;
-    int weight = findWeights(graph.getRootNode());
+    int weight = visitNode(graph.getRootNode());
     int timeEnd = DateTime.now().millisecondsSinceEpoch;
 
     Logger.logMsg("Debug: ${debug.toString()}");
@@ -18,5 +18,5 @@ abstract class ITraversalAlgorithm<T> {
     Logger.logMsg("Ellapsed time: ${timeEnd - timeStart} millis");
   }
 
-  int findWeights(T start);
+  int visitNode(T start);
 }

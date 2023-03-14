@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_function_literals_in_foreach_calls
+
 import 'package:graphs/algorithms/base/itraversal_algorithm.dart';
 import 'package:graphs/data_structs/graphs/base/ibase_graph.dart';
 import 'package:graphs/data_structs/nodes/inode.dart';
@@ -10,32 +12,29 @@ class SequentialNodeTraversal extends ITraversalAlgorithm<INode> {
 
   @override
   void traverse() {
-    int timeStart = DateTime.now().millisecondsSinceEpoch;
-    _traverseNodes(graph.getRootNode());
-    int timeEnd = DateTime.now().millisecondsSinceEpoch;
+    super.traverse();
 
-    Logger.logMsg("Debug: ${debug.toString()}");
+    Logger.logMsg("--------------------------------");
     Logger.logMsg("Length: ${traversedNodes.length}");
-
     traversedNodes.forEach((e) {
       Logger.logMsg(e.value());
     });
-
-    Logger.logMsg("Ellapsed time: ${timeEnd - timeStart} millis");
+    Logger.logMsg("--------------------------------");
   }
 
+  /// Traverse each node sequentially.
+  /// Add visited nodes to collection
   @override
-  int findWeights(INode start) => 0;
-
-  void _traverseNodes(INode start) {
+  int visitNode(INode start) {
     traversedNodes.add(start);
 
     if (start.isLeaf()) {
-      return;
+      return 0;
     } else {
       for (var node in start.children!) {
-        _traverseNodes(node);
+        visitNode(node);
       }
     }
+    return -1;
   }
 }

@@ -10,7 +10,7 @@ class IterativeBinaryTraversal extends ITraversalAlgorithm<IBinaryNode> {
   IterativeBinaryTraversal({required IBaseGraph graph}) : super(graph: graph);
 
   @override
-  int findWeights(IBinaryNode? start) {
+  int visitNode(IBinaryNode? start) {
     int result = 0;
 
     if (start == null) {

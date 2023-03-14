@@ -6,7 +6,7 @@ import 'package:graphs/data_structs/graphs/binary_graph.dart';
 import 'package:graphs/data_structs/graphs/graph.dart';
 import 'package:graphs/data_structs/node_parser.dart';
 import 'package:graphs/data_structs/nodes/inode.dart';
-import 'package:graphs/data_structs/nodes/sequential_node_traversal.dart';
+import 'package:graphs/algorithms/sequential_node_traversal.dart';
 import 'package:graphs/utils/io_utils.dart';
 import 'package:graphs/utils/logger.dart';
 
@@ -27,7 +27,7 @@ void binaryNodes() {
 void nodes() {
   final graph = Graph.fromFile('simple_tree.json');
 
-  final traverser = SequentialNodeTraversal(graph: graph);
+  final algor = SequentialNodeTraversal(graph: graph);
 
-  traverser.traverse();
+  algor.traverse();
 }
