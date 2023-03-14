@@ -8,6 +8,8 @@ import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 class RecursiveBinaryTraversal extends ITraversalAlgorithm<IBinaryNode> {
   RecursiveBinaryTraversal({required IBaseGraph graph}) : super(graph: graph);
 
+  /// Traverse each node sequentially.
+  /// @return: minimum number of nodes that must be visited in the shortest path
   @override
   int visitNode(IBinaryNode? start) {
     // NO NODE

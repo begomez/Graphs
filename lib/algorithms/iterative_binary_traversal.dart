@@ -9,6 +9,8 @@ import 'package:graphs/data_structs/queues/queue_item.dart';
 class IterativeBinaryTraversal extends ITraversalAlgorithm<IBinaryNode> {
   IterativeBinaryTraversal({required IBaseGraph graph}) : super(graph: graph);
 
+  /// Traverse each node sequentially.
+  /// @return: minimum number of nodes that must be visited in the shortest path
   @override
   int visitNode(IBinaryNode? start) {
     int result = 0;
