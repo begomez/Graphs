@@ -1,8 +1,8 @@
-import 'package:graphs/data_structs/inode.dart';
+import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
 
 /// Node with left, right children that stores
 /// some primitive props
-class SimpleBinaryNode extends INode {
+class SimpleBinaryNode extends BaseBinaryNode {
   final String id;
   final String name;
 

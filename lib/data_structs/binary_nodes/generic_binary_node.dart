@@ -1,9 +1,9 @@
-import 'package:graphs/data_structs/inode.dart';
-import 'package:graphs/models/iserial.dart';
+import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
+import 'package:graphs/models/icustom_serializable.dart';
 
 /// Node with left, right children that stores
 /// a serializable object
-class GenericBinaryNode<T extends ISerial> extends INode {
+class GenericBinaryNode<T extends ICustomSerializable> extends BaseBinaryNode {
   final T data;
 
   const GenericBinaryNode(

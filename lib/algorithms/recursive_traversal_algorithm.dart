@@ -1,15 +1,15 @@
 import 'dart:math';
 
-import 'package:graphs/algor/base/traversal_algorithm.dart';
-import 'package:graphs/data_structs/graph.dart';
-import 'package:graphs/data_structs/inode.dart';
+import 'package:graphs/algorithms/base/base_traversal_algorithm.dart';
+import 'package:graphs/data_structs/graphs/graph.dart';
+import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
 
 /// Class encapsulating node traversal through recursivity
-class RecursiveTraversalAlgorithm extends TraversalAlgorithm {
+class RecursiveTraversalAlgorithm extends BaseTraversalAlgorithm {
   RecursiveTraversalAlgorithm({required Graph graph}) : super(graph: graph);
 
   @override
-  int findWeights(INode? start) {
+  int findWeights(BaseBinaryNode? start) {
     // NO NODE
     if (start == null) {
       return 0;

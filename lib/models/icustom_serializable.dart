@@ -1,4 +1,4 @@
-abstract class ISerial<T> {
+abstract class ICustomSerializable<T> {
   T fromJson(Map<String, dynamic> json);
 
   Map<String, dynamic> toJson();

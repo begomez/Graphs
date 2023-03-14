@@ -1,6 +1,6 @@
-import 'package:graphs/models/iserial.dart';
+import 'package:graphs/models/icustom_serializable.dart';
 
-class Person implements ISerial<Person> {
+class Person implements ICustomSerializable<Person> {
   final int age;
   final String name;
 

@@ -1,22 +1,22 @@
 import 'dart:collection';
 
-import 'package:graphs/algor/base/traversal_algorithm.dart';
-import 'package:graphs/data_structs/graph.dart';
-import 'package:graphs/data_structs/inode.dart';
-import 'package:graphs/data_structs/queue_item.dart';
+import 'package:graphs/algorithms/base/base_traversal_algorithm.dart';
+import 'package:graphs/data_structs/graphs/graph.dart';
+import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
+import 'package:graphs/data_structs/queues/queue_item.dart';
 
 /// Class encapsulating node traversal through iterations
-class IterativeTraversalAlgorithm extends TraversalAlgorithm {
+class IterativeTraversalAlgorithm extends BaseTraversalAlgorithm {
   IterativeTraversalAlgorithm({required Graph graph}) : super(graph: graph);
 
   @override
-  int findWeights(INode? start) {
+  int findWeights(BaseBinaryNode? start) {
     int result = 0;
 
     if (start == null) {
       return result;
     } else {
-      INode actualNode;
+      BaseBinaryNode actualNode;
       int actualDepth = 0;
       final queue = Queue<QueueItem>();
 

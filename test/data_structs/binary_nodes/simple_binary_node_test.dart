@@ -1,4 +1,4 @@
-import 'package:graphs/data_structs/simple_binary_node.dart';
+import 'package:graphs/data_structs/binary_nodes/simple_binary_node.dart';
 import 'package:test/test.dart';
 
 void main() {

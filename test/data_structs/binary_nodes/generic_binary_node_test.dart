@@ -1,4 +1,4 @@
-import 'package:graphs/data_structs/generic_binary_node.dart';
+import 'package:graphs/data_structs/binary_nodes/generic_binary_node.dart';
 import 'package:graphs/models/person.dart';
 import 'package:test/test.dart';
 
