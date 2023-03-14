@@ -10,9 +10,13 @@ abstract class BaseTraversalAlgorithm {
   BaseTraversalAlgorithm({required this.graph}) : super();
 
   void traverse() {
+    int timeStart = DateTime.now().millisecondsSinceEpoch;
     int weight = findWeights(graph.getRootNode());
+    int timeEnd = DateTime.now().millisecondsSinceEpoch;
+
     Logger.logMsg("Debug: ${debug.toString()}");
     Logger.logMsg("Weight: $weight");
+    Logger.logMsg("Ellapsed time: ${timeEnd - timeStart} millis");
   }
 
   int findWeights(BaseBinaryNode start);
