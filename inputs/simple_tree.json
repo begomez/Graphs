@@ -1,0 +1,29 @@
+[{
+	"data": 1,
+	"children": [{
+			"data": 4,
+			"children": [{
+				"data": 10,
+				"children": null
+			}, {
+				"data": 12,
+				"children": null
+			}]
+		},
+		{
+			"data": 3,
+			"children": [{
+					"data": 3,
+					"children": null
+				},
+				{
+					"data": 10,
+					"children": null
+				}, {
+					"data": 1,
+					"children": null
+				}
+			]
+		}
+	]
+}]

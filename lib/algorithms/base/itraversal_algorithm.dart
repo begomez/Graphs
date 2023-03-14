@@ -1,10 +1,10 @@
-import 'package:graphs/data_structs/graphs/graph.dart';
-import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
+import 'package:graphs/data_structs/graphs/binary_graph.dart';
+import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 import 'package:graphs/utils/logger.dart';
 
 /// Abstraction class used to generalize traversing a list of nodes
 abstract class ITraversalAlgorithm {
-  final Graph graph;
+  final BinaryGraph graph;
   Map<String, int> debug = {};
 
   ITraversalAlgorithm({required this.graph}) : super();

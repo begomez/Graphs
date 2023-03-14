@@ -30,7 +30,7 @@ void main() {
     test("When parsing simple nodes then list returned", () {
       final parser = NodeParser();
 
-      final actual = parser.parseSimpleNodes(strJson);
+      final actual = parser.parseSimpleBinaryNodes(strJson);
 
       expect(actual.length, 1);
     });

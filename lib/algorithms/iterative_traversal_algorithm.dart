@@ -1,13 +1,14 @@
 import 'dart:collection';
 
-import 'package:graphs/algorithms/base/base_traversal_algorithm.dart';
-import 'package:graphs/data_structs/graphs/graph.dart';
-import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
+import 'package:graphs/algorithms/base/itraversal_algorithm.dart';
+import 'package:graphs/data_structs/graphs/binary_graph.dart';
+import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 import 'package:graphs/data_structs/queues/queue_item.dart';
 
 /// Class encapsulating node traversal through iterations
 class IterativeTraversalAlgorithm extends ITraversalAlgorithm {
-  IterativeTraversalAlgorithm({required Graph graph}) : super(graph: graph);
+  IterativeTraversalAlgorithm({required BinaryGraph graph})
+      : super(graph: graph);
 
   @override
   int findWeights(IBinaryNode? start) {

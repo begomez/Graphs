@@ -1,4 +1,4 @@
-import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
+import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 
 /// Node with left, right children that stores
 /// some primitive props

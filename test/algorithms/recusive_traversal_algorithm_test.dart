@@ -1,7 +1,7 @@
 import 'package:graphs/algorithms/recursive_traversal_algorithm.dart';
-import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
+import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 import 'package:graphs/data_structs/binary_nodes/simple_binary_node.dart';
-import 'package:graphs/data_structs/graphs/graph.dart';
+import 'package:graphs/data_structs/graphs/binary_graph.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -11,12 +11,12 @@ void main() {
   late List<IBinaryNode> fakeNodesOnlyLeft;
   late List<IBinaryNode> fakeNodesOnlyRight;
   late List<IBinaryNode> fakeNodesInconnex;
-  late Graph fakeGraphValid;
-  late Graph fakeGraphEmpty;
-  late Graph fakeGraphUnary;
-  late Graph fakeGraphOnlyLeft;
-  late Graph fakeGraphOnlyRight;
-  late Graph fakeGraphInconnex;
+  late BinaryGraph fakeGraphValid;
+  late BinaryGraph fakeGraphEmpty;
+  late BinaryGraph fakeGraphUnary;
+  late BinaryGraph fakeGraphOnlyLeft;
+  late BinaryGraph fakeGraphOnlyRight;
+  late BinaryGraph fakeGraphInconnex;
 
   setUp(() {
     ///    1
@@ -93,12 +93,12 @@ void main() {
       SimpleBinaryNode(id: "5", name: "Node5"),
     ];
 
-    fakeGraphValid = Graph(fakeNodesValid);
-    fakeGraphEmpty = Graph(fakeNodesEmpty);
-    fakeGraphUnary = Graph(fakeNodesUnary);
-    fakeGraphOnlyLeft = Graph(fakeNodesOnlyLeft);
-    fakeGraphOnlyRight = Graph(fakeNodesOnlyRight);
-    fakeGraphInconnex = Graph(fakeNodesInconnex);
+    fakeGraphValid = BinaryGraph(fakeNodesValid);
+    fakeGraphEmpty = BinaryGraph(fakeNodesEmpty);
+    fakeGraphUnary = BinaryGraph(fakeNodesUnary);
+    fakeGraphOnlyLeft = BinaryGraph(fakeNodesOnlyLeft);
+    fakeGraphOnlyRight = BinaryGraph(fakeNodesOnlyRight);
+    fakeGraphInconnex = BinaryGraph(fakeNodesInconnex);
   });
 
   group("RecursiveTraversalAlgorithm", () {

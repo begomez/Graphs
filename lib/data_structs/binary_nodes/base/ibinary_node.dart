@@ -4,6 +4,8 @@ abstract class IBinaryNode {
 
   const IBinaryNode({this.left, this.right});
 
+  String value();
+
   Map<String, dynamic> toJson();
 
   @override
@@ -16,6 +18,4 @@ abstract class IBinaryNode {
   bool hasRight() => _has(right);
 
   bool _has(IBinaryNode? node) => node != null;
-
-  String value();
 }
