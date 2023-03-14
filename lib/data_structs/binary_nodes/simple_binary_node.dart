@@ -9,8 +9,8 @@ class SimpleBinaryNode extends BaseBinaryNode {
   const SimpleBinaryNode(
       {required this.id,
       required this.name,
-      SimpleBinaryNode? left,
-      SimpleBinaryNode? right})
+      BaseBinaryNode? left,
+      BaseBinaryNode? right})
       : super(left: left, right: right);
 
   factory SimpleBinaryNode.fromJson(Map<String, dynamic> json) =>

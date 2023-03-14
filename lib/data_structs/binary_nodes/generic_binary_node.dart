@@ -7,7 +7,7 @@ class GenericBinaryNode<T extends ICustomSerializable> extends BaseBinaryNode {
   final T data;
 
   const GenericBinaryNode(
-      {required this.data, GenericBinaryNode? left, GenericBinaryNode? right})
+      {required this.data, BaseBinaryNode? left, BaseBinaryNode? right})
       : super(left: left, right: right);
 
   GenericBinaryNode<T> fromJson(Map<String, dynamic> map) =>

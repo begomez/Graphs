@@ -10,7 +10,7 @@ abstract class BaseTraversalAlgorithm {
   BaseTraversalAlgorithm({required this.graph}) : super();
 
   void traverse() {
-    int weight = findWeights(graph.getInitial());
+    int weight = findWeights(graph.getRootNode());
     Logger.logMsg("Debug: ${debug.toString()}");
     Logger.logMsg("Weight: $weight");
   }
