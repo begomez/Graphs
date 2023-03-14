@@ -2,7 +2,16 @@ import 'dart:io';
 
 import 'package:graphs/utils/logger.dart';
 
-abstract class IOUtils {
+/// Wrapper obj. around static methods
+class IOWrapper {
+  const IOWrapper() : super();
+
+  String getFileContents({required String fileName}) =>
+      _IOUtils.getFileContents(fileName: fileName);
+}
+
+/// I/O utilities
+abstract class _IOUtils {
   static final String dir = "inputs/";
 
   static String getFileContents({required String fileName}) {

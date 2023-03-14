@@ -1,14 +1,27 @@
 import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
 import 'package:graphs/data_structs/binary_nodes/simple_binary_node.dart';
 import 'package:graphs/data_structs/graphs/graph.dart';
+import 'package:graphs/data_structs/node_parser.dart';
+import 'package:graphs/utils/io_utils.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 
+class MockIOWrapper extends Mock implements IOWrapper {}
+
+class MockNodeParser extends Mock implements NodeParser {}
+
 void main() {
+  late NodeParser mockParser;
+  late IOWrapper mockWrapper;
+
   late BaseBinaryNode node1;
   late BaseBinaryNode node2;
   late BaseBinaryNode node3;
 
   setUp(() {
+    mockParser = MockNodeParser();
+    mockWrapper = MockIOWrapper();
+
     ///    1
     ///   /
     ///  2
@@ -26,6 +39,20 @@ void main() {
       assert(actual.nodes.contains(node1));
       assert(actual.nodes.contains(node2));
       assert(actual.nodes.contains(node3));
+    });
+
+    test('When creating from file then props are set', () {
+      when(() => mockWrapper.getFileContents(fileName: any(named: "fileName")))
+          .thenReturn("{}");
+      when(() => mockParser.parseSimpleNodes(any()))
+          .thenReturn([SimpleBinaryNode(id: "0", name: "Node from JSON")]);
+
+      final actual =
+          Graph.fromFile("fileName", parser: mockParser, wrapper: mockWrapper);
+
+      assert(!actual.isEmpty());
+      assert(actual.nodes.length == 1);
+      assert(actual.getRootNode().value() == "Node from JSON");
     });
   });
 

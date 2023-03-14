@@ -1,7 +1,6 @@
-import 'dart:convert';
-
 import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
 import 'package:graphs/data_structs/binary_nodes/simple_binary_node.dart';
+import 'package:graphs/data_structs/node_parser.dart';
 import 'package:graphs/utils/io_utils.dart';
 import 'package:graphs/utils/logger.dart';
 
@@ -11,21 +10,16 @@ class Graph {
 
   const Graph(this.nodes) : super();
 
-  factory Graph.fromFile(String fileName) {
-    String strNodes = IOUtils.getFileContents(fileName: fileName);
+  factory Graph.fromFile(
+    String fileName, {
+    NodeParser parser = const NodeParser(),
+    IOWrapper wrapper = const IOWrapper(),
+  }) {
+    String strNodes = wrapper.getFileContents(fileName: fileName);
 
-    List<SimpleBinaryNode> nodes = parseSimpleNodes(strNodes);
+    List<SimpleBinaryNode> nodes = parser.parseSimpleNodes(strNodes);
 
     return Graph(nodes);
-  }
-
-  static List<SimpleBinaryNode> parseSimpleNodes(String strNodes) {
-    List<dynamic> rawNodes = json.decode(strNodes) as List<dynamic>;
-
-    List<SimpleBinaryNode> nodes =
-        rawNodes.map((e) => SimpleBinaryNode.fromJson(e)).toList();
-
-    return nodes;
   }
 
   void dumpNodes() {
