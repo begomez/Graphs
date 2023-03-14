@@ -1,5 +1,6 @@
 import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
 
+// Data type wrapping a node so it can be used in queues
 class QueueItem {
   final BaseBinaryNode node;
   final int depth;
