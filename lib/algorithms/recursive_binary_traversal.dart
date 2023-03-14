@@ -1,13 +1,12 @@
 import 'dart:math';
 
 import 'package:graphs/algorithms/base/itraversal_algorithm.dart';
-import 'package:graphs/data_structs/graphs/binary_graph.dart';
+import 'package:graphs/data_structs/graphs/base/ibase_graph.dart';
 import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 
-/// Class encapsulating node traversal through recursivity
-class RecursiveTraversalAlgorithm extends ITraversalAlgorithm {
-  RecursiveTraversalAlgorithm({required BinaryGraph graph})
-      : super(graph: graph);
+/// Class encapsulating binary nodes traversal through recursivity
+class RecursiveBinaryTraversal extends ITraversalAlgorithm<IBinaryNode> {
+  RecursiveBinaryTraversal({required IBaseGraph graph}) : super(graph: graph);
 
   @override
   int findWeights(IBinaryNode? start) {

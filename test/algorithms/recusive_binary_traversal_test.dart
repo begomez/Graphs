@@ -1,4 +1,4 @@
-import 'package:graphs/algorithms/recursive_traversal_algorithm.dart';
+import 'package:graphs/algorithms/recursive_binary_traversal.dart';
 import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 import 'package:graphs/data_structs/binary_nodes/simple_binary_node.dart';
 import 'package:graphs/data_structs/graphs/binary_graph.dart';
@@ -103,14 +103,14 @@ void main() {
 
   group("RecursiveTraversalAlgorithm", () {
     test('When invoking constructor then object created', () {
-      assert(RecursiveTraversalAlgorithm(graph: fakeGraphValid) !=
-          RecursiveTraversalAlgorithm(graph: fakeGraphEmpty));
+      assert(RecursiveBinaryTraversal(graph: fakeGraphValid) !=
+          RecursiveBinaryTraversal(graph: fakeGraphEmpty));
     });
   });
 
   group("IterativeTraversalAlgorithm.traverse", () {
     test('When traversing valid graph then min path returned', () {
-      final obj = RecursiveTraversalAlgorithm(graph: fakeGraphValid);
+      final obj = RecursiveBinaryTraversal(graph: fakeGraphValid);
 
       int expected = 2;
       int actual = obj.findWeights(fakeGraphValid.getRootNode());
@@ -119,7 +119,7 @@ void main() {
     });
 
     test('When traversing empty graph then error thrown', () {
-      final obj = RecursiveTraversalAlgorithm(graph: fakeGraphEmpty);
+      final obj = RecursiveBinaryTraversal(graph: fakeGraphEmpty);
 
       final actual = obj.findWeights;
 
@@ -131,7 +131,7 @@ void main() {
     });
 
     test('When traversing unary graph then min path returned', () {
-      final obj = RecursiveTraversalAlgorithm(graph: fakeGraphUnary);
+      final obj = RecursiveBinaryTraversal(graph: fakeGraphUnary);
 
       final expected = 1;
       final actual = obj.findWeights(fakeGraphUnary.getRootNode());
@@ -140,7 +140,7 @@ void main() {
     });
 
     test('When traversing only left graph then min path returned', () {
-      final obj = RecursiveTraversalAlgorithm(graph: fakeGraphOnlyLeft);
+      final obj = RecursiveBinaryTraversal(graph: fakeGraphOnlyLeft);
 
       final expected = 2;
       final actual = obj.findWeights(fakeGraphOnlyLeft.getRootNode());
@@ -149,7 +149,7 @@ void main() {
     });
 
     test('When traversing only right graph then min path returned', () {
-      final obj = RecursiveTraversalAlgorithm(graph: fakeGraphOnlyRight);
+      final obj = RecursiveBinaryTraversal(graph: fakeGraphOnlyRight);
 
       final expected = 2;
       final actual = obj.findWeights(fakeGraphOnlyRight.getRootNode());
@@ -158,7 +158,7 @@ void main() {
     });
 
     test('When traversing inconnex graph then min path returned', () {
-      final obj = RecursiveTraversalAlgorithm(graph: fakeGraphInconnex);
+      final obj = RecursiveBinaryTraversal(graph: fakeGraphInconnex);
 
       final expected = 1;
       final actual = obj.findWeights(fakeGraphInconnex.getRootNode());
@@ -167,7 +167,7 @@ void main() {
     });
 
     test('When receiving null value then default returned', () {
-      final obj = RecursiveTraversalAlgorithm(graph: fakeGraphInconnex);
+      final obj = RecursiveBinaryTraversal(graph: fakeGraphInconnex);
 
       final expected = 0;
       final actual = obj.findWeights(null);
