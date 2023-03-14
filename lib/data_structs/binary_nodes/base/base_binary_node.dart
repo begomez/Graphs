@@ -1,8 +1,8 @@
-abstract class BaseBinaryNode {
-  final BaseBinaryNode? left;
-  final BaseBinaryNode? right;
+abstract class IBinaryNode {
+  final IBinaryNode? left;
+  final IBinaryNode? right;
 
-  const BaseBinaryNode({this.left, this.right});
+  const IBinaryNode({this.left, this.right});
 
   Map<String, dynamic> toJson();
 
@@ -15,7 +15,7 @@ abstract class BaseBinaryNode {
 
   bool hasRight() => _has(right);
 
-  bool _has(BaseBinaryNode? node) => node != null;
+  bool _has(IBinaryNode? node) => node != null;
 
   String value();
 }

@@ -5,12 +5,12 @@ import 'package:graphs/data_structs/graphs/graph.dart';
 import 'package:test/test.dart';
 
 void main() {
-  late List<BaseBinaryNode> fakeNodesValid;
-  late List<BaseBinaryNode> fakeNodesEmpty;
-  late List<BaseBinaryNode> fakeNodesUnary;
-  late List<BaseBinaryNode> fakeNodesOnlyLeft;
-  late List<BaseBinaryNode> fakeNodesOnlyRight;
-  late List<BaseBinaryNode> fakeNodesInconnex;
+  late List<IBinaryNode> fakeNodesValid;
+  late List<IBinaryNode> fakeNodesEmpty;
+  late List<IBinaryNode> fakeNodesUnary;
+  late List<IBinaryNode> fakeNodesOnlyLeft;
+  late List<IBinaryNode> fakeNodesOnlyRight;
+  late List<IBinaryNode> fakeNodesInconnex;
   late Graph fakeGraphValid;
   late Graph fakeGraphEmpty;
   late Graph fakeGraphUnary;

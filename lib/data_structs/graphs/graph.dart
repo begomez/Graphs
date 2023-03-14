@@ -6,7 +6,7 @@ import 'package:graphs/utils/logger.dart';
 
 /// Collection of binary nodes
 class Graph {
-  final List<BaseBinaryNode> nodes;
+  final List<IBinaryNode> nodes;
 
   const Graph(this.nodes) : super();
 
@@ -30,9 +30,9 @@ class Graph {
 
   bool isEmpty() => nodes.isEmpty;
 
-  List<BaseBinaryNode> getNodes() => nodes;
+  List<IBinaryNode> getNodes() => nodes;
 
-  BaseBinaryNode getRootNode() {
+  IBinaryNode getRootNode() {
     assert(!isEmpty(), Exception("Empty!"));
 
     return nodes[0];

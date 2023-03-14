@@ -3,11 +3,11 @@ import 'package:graphs/models/icustom_serializable.dart';
 
 /// Node with left, right children that stores
 /// a serializable object
-class GenericBinaryNode<T extends ICustomSerializable> extends BaseBinaryNode {
+class GenericBinaryNode<T extends ICustomSerializable> extends IBinaryNode {
   final T data;
 
   const GenericBinaryNode(
-      {required this.data, BaseBinaryNode? left, BaseBinaryNode? right})
+      {required this.data, IBinaryNode? left, IBinaryNode? right})
       : super(left: left, right: right);
 
   GenericBinaryNode<T> fromJson(Map<String, dynamic> map) =>

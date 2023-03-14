@@ -2,15 +2,15 @@ import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
 
 /// Node with left, right children that stores
 /// some primitive props
-class SimpleBinaryNode extends BaseBinaryNode {
+class SimpleBinaryNode extends IBinaryNode {
   final String id;
   final String name;
 
   const SimpleBinaryNode(
       {required this.id,
       required this.name,
-      BaseBinaryNode? left,
-      BaseBinaryNode? right})
+      IBinaryNode? left,
+      IBinaryNode? right})
       : super(left: left, right: right);
 
   factory SimpleBinaryNode.fromJson(Map<String, dynamic> json) =>

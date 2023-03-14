@@ -14,9 +14,9 @@ void main() {
   late NodeParser mockParser;
   late IOWrapper mockWrapper;
 
-  late BaseBinaryNode node1;
-  late BaseBinaryNode node2;
-  late BaseBinaryNode node3;
+  late IBinaryNode node1;
+  late IBinaryNode node2;
+  late IBinaryNode node3;
 
   setUp(() {
     mockParser = MockNodeParser();

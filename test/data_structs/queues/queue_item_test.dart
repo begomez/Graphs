@@ -4,7 +4,7 @@ import 'package:graphs/data_structs/queues/queue_item.dart';
 import 'package:test/test.dart';
 
 void main() {
-  late BaseBinaryNode node;
+  late IBinaryNode node;
 
   setUp(() {
     node = SimpleBinaryNode(id: "1", name: "Node1");

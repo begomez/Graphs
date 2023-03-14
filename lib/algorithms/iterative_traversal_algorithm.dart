@@ -6,17 +6,17 @@ import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
 import 'package:graphs/data_structs/queues/queue_item.dart';
 
 /// Class encapsulating node traversal through iterations
-class IterativeTraversalAlgorithm extends BaseTraversalAlgorithm {
+class IterativeTraversalAlgorithm extends ITraversalAlgorithm {
   IterativeTraversalAlgorithm({required Graph graph}) : super(graph: graph);
 
   @override
-  int findWeights(BaseBinaryNode? start) {
+  int findWeights(IBinaryNode? start) {
     int result = 0;
 
     if (start == null) {
       return result;
     } else {
-      BaseBinaryNode actualNode;
+      IBinaryNode actualNode;
       int actualDepth = 0;
       final queue = Queue<QueueItem>();
 

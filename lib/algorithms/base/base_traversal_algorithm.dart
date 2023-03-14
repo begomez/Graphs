@@ -3,11 +3,11 @@ import 'package:graphs/data_structs/binary_nodes/base/base_binary_node.dart';
 import 'package:graphs/utils/logger.dart';
 
 /// Abstraction class used to generalize traversing a list of nodes
-abstract class BaseTraversalAlgorithm {
+abstract class ITraversalAlgorithm {
   final Graph graph;
   Map<String, int> debug = {};
 
-  BaseTraversalAlgorithm({required this.graph}) : super();
+  ITraversalAlgorithm({required this.graph}) : super();
 
   void traverse() {
     int timeStart = DateTime.now().millisecondsSinceEpoch;
@@ -19,5 +19,5 @@ abstract class BaseTraversalAlgorithm {
     Logger.logMsg("Ellapsed time: ${timeEnd - timeStart} millis");
   }
 
-  int findWeights(BaseBinaryNode start);
+  int findWeights(IBinaryNode start);
 }
