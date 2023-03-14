@@ -4,5 +4,5 @@ class QueueItem {
   final BaseBinaryNode node;
   final int depth;
 
-  QueueItem({required this.node, this.depth = 0}) : super();
+  const QueueItem({required this.node, this.depth = 0}) : super();
 }

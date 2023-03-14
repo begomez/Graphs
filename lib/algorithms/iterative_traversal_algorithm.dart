@@ -23,7 +23,7 @@ class IterativeTraversalAlgorithm extends BaseTraversalAlgorithm {
       queue.add(QueueItem(node: start, depth: 1));
 
       while (queue.isNotEmpty) {
-        final QueueItem actualItem = queue.removeLast();
+        final QueueItem actualItem = queue.removeFirst();
 
         actualNode = actualItem.node;
         actualDepth = actualItem.depth;
