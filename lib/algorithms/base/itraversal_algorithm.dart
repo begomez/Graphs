@@ -2,6 +2,7 @@ import 'package:graphs/data_structs/graphs/base/ibase_graph.dart';
 import 'package:graphs/utils/logger.dart';
 
 /// Abstraction class used to generalize traversing a list of nodes
+/// contained in a graph
 abstract class ITraversalAlgorithm<T> {
   final IBaseGraph graph;
   Map<String, int> debug = {};
@@ -10,7 +11,7 @@ abstract class ITraversalAlgorithm<T> {
 
   void traverse() {
     int timeStart = DateTime.now().millisecondsSinceEpoch;
-    int weight = visitNode(graph.getRootNode());
+    int weight = visitNode(graph.getRootNode() as T); //XXX: required cast
     int timeEnd = DateTime.now().millisecondsSinceEpoch;
 
     Logger.logMsg("Debug: ${debug.toString()}");
@@ -18,5 +19,5 @@ abstract class ITraversalAlgorithm<T> {
     Logger.logMsg("Ellapsed time: ${timeEnd - timeStart} millis");
   }
 
-  int visitNode(T start);
+  int visitNode(T currentNode);
 }

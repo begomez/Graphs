@@ -1,5 +1,8 @@
 import 'package:graphs/data_structs/common/igraph_element.dart';
 
+/// Node with n-children
+///
+/// Can be included in a graph
 abstract class INode implements IGraphElement {
   final List<INode>? children;
 

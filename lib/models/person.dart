@@ -1,5 +1,6 @@
 import 'package:graphs/models/icustom_serializable.dart';
 
+/// Sample custom data type
 class Person implements ICustomSerializable<Person> {
   final int age;
   final String name;

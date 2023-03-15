@@ -14,7 +14,10 @@ class IOWrapper {
 abstract class _IOUtils {
   static final String dir = "inputs/";
 
-  static String getFileContents({required String fileName}) {
+  static String getFileContents({
+    required String fileName,
+    String preffix = "Graph",
+  }) {
     assert(fileName.isNotEmpty);
 
     final file = File("$dir$fileName");
@@ -23,7 +26,7 @@ abstract class _IOUtils {
     // Read the contents of the file
     try {
       contents = file.readAsStringSync();
-      Logger.logMsg("Graph:\n$contents");
+      Logger.logMsg("$preffix:\n$contents");
     } on Exception catch (e) {
       contents = "";
       Logger.logError(e);

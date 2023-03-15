@@ -5,6 +5,7 @@ import 'package:graphs/data_structs/graphs/base/ibase_graph.dart';
 import 'package:graphs/data_structs/nodes/base/inode.dart';
 import 'package:graphs/utils/logger.dart';
 
+/// Implementation of traversing a list of nodes through iterations and recursivity
 class SequentialNodeTraversal extends ITraversalAlgorithm<INode> {
   late List<INode> traversedNodes = [];
 
@@ -21,19 +22,19 @@ class SequentialNodeTraversal extends ITraversalAlgorithm<INode> {
     });
   }
 
-  /// Traverse each node sequentially.
-  /// Add visited nodes to collection
+  /// Traverse each node through iterations and recursivity
+  /// Returns the number of nodes contained in the shortest path
   @override
-  int visitNode(INode start) {
-    traversedNodes.add(start);
+  int visitNode(INode currentNode) {
+    traversedNodes.add(currentNode);
 
-    if (start.isLeaf()) {
+    if (currentNode.isLeaf()) {
       return 0;
     } else {
-      for (var node in start.children!) {
+      for (var node in currentNode.children!) {
         visitNode(node);
       }
     }
-    return -1;
+    return 0;
   }
 }

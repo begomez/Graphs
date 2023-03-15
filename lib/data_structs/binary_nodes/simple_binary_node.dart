@@ -1,7 +1,8 @@
 import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 
-/// Node with left, right children that stores
-/// some primitive props
+/// Concrete implementation of binary node
+///
+/// It stores some primitive props as data
 class SimpleBinaryNode extends IBinaryNode {
   final String id;
   final String name;
@@ -15,22 +16,22 @@ class SimpleBinaryNode extends IBinaryNode {
 
   factory SimpleBinaryNode.fromJson(Map<String, dynamic> json) =>
       SimpleBinaryNode(
-        id: json[_SimpleNodeProps.id],
-        name: json[_SimpleNodeProps.name],
-        left: json[_SimpleNodeProps.left] != null
-            ? SimpleBinaryNode.fromJson(json[_SimpleNodeProps.left])
+        id: json[_SimpleBinaryNodeProps.id],
+        name: json[_SimpleBinaryNodeProps.name],
+        left: json[_SimpleBinaryNodeProps.left] != null
+            ? SimpleBinaryNode.fromJson(json[_SimpleBinaryNodeProps.left])
             : null,
-        right: json[_SimpleNodeProps.right] != null
-            ? SimpleBinaryNode.fromJson(json[_SimpleNodeProps.right])
+        right: json[_SimpleBinaryNodeProps.right] != null
+            ? SimpleBinaryNode.fromJson(json[_SimpleBinaryNodeProps.right])
             : null,
       );
 
   @override
   Map<String, dynamic> toJson() => {
-        _SimpleNodeProps.id: id,
-        _SimpleNodeProps.name: name,
-        _SimpleNodeProps.left: hasLeft() ? left!.toJson() : null,
-        _SimpleNodeProps.right: hasRight() ? right!.toJson() : null,
+        _SimpleBinaryNodeProps.id: id,
+        _SimpleBinaryNodeProps.name: name,
+        _SimpleBinaryNodeProps.left: hasLeft() ? left!.toJson() : null,
+        _SimpleBinaryNodeProps.right: hasRight() ? right!.toJson() : null,
       };
 
   @override
@@ -40,7 +41,7 @@ class SimpleBinaryNode extends IBinaryNode {
   String value() => name;
 }
 
-class _SimpleNodeProps {
+class _SimpleBinaryNodeProps {
   static final String id = "id";
   static final String name = "name";
   static final String left = "left";

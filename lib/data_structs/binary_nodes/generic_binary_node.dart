@@ -1,8 +1,9 @@
 import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 import 'package:graphs/models/icustom_serializable.dart';
 
-/// Node with left, right children that stores
-/// a serializable object
+/// Concrete implementation of binary node
+///
+/// It stores a serializable object as data
 class GenericBinaryNode<T extends ICustomSerializable> extends IBinaryNode {
   final T data;
 

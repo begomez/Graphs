@@ -1,5 +1,8 @@
 import 'package:graphs/data_structs/common/igraph_element.dart';
 
+/// Node with 2 optional children: left and right
+///
+/// Can be included in a graph
 abstract class IBinaryNode implements IGraphElement {
   final IBinaryNode? left;
   final IBinaryNode? right;
@@ -17,6 +20,8 @@ abstract class IBinaryNode implements IGraphElement {
 
   @override
   bool isLeaf() => !_has(left) && !_has(right);
+
+// Helpers
 
   bool hasLeft() => _has(left);
 

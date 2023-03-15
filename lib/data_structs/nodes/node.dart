@@ -1,5 +1,6 @@
 import 'package:graphs/data_structs/nodes/base/inode.dart';
 
+/// Concrete implementation of node with n-children
 class Node extends INode {
   final int data;
 

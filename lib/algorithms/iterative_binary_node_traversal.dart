@@ -5,25 +5,26 @@ import 'package:graphs/data_structs/graphs/base/ibase_graph.dart';
 import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 import 'package:graphs/data_structs/queues/queue_item.dart';
 
-/// Class encapsulating binary nodes traversal through iterations
+/// Implementation of traversing a list of nodes through iterations
 class IterativeBinaryNodeTraversal extends ITraversalAlgorithm<IBinaryNode> {
   IterativeBinaryNodeTraversal({required IBaseGraph graph})
       : super(graph: graph);
 
-  /// Traverse each node sequentially.
-  /// @return: minimum number of nodes that must be visited in the shortest path
+  /// Traverse each node with recursivity
+  /// Returns the number of nodes contained in the shortest path
   @override
-  int visitNode(IBinaryNode? start) {
+  int visitNode(IBinaryNode? currentNode) {
     int result = 0;
 
-    if (start == null) {
+    if (currentNode == null) {
       return result;
     } else {
-      IBinaryNode actualNode;
-      int actualDepth = 0;
       final queue = Queue<QueueItem>();
 
-      queue.add(QueueItem(node: start, depth: 1));
+      queue.add(QueueItem(node: currentNode, depth: 1));
+
+      IBinaryNode actualNode;
+      int actualDepth = 0;
 
       while (queue.isNotEmpty) {
         final QueueItem actualItem = queue.removeFirst();

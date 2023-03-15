@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:graphs/data_structs/binary_nodes/simple_binary_node.dart';
 import 'package:graphs/data_structs/nodes/node.dart';
 
-/// Parser that converts a string representing objects in JSON format to
+/// Parser that converts a string in JSON format to its
 /// corresponding instances
 class NodeParser {
   const NodeParser() : super();
