@@ -2,7 +2,7 @@
 
 import 'package:graphs/algorithms/base/itraversal_algorithm.dart';
 import 'package:graphs/data_structs/graphs/base/ibase_graph.dart';
-import 'package:graphs/data_structs/nodes/inode.dart';
+import 'package:graphs/data_structs/nodes/base/inode.dart';
 import 'package:graphs/utils/logger.dart';
 
 class SequentialNodeTraversal extends ITraversalAlgorithm<INode> {
@@ -14,12 +14,11 @@ class SequentialNodeTraversal extends ITraversalAlgorithm<INode> {
   void traverse() {
     super.traverse();
 
-    Logger.logMsg("--------------------------------");
     Logger.logMsg("Length: ${traversedNodes.length}");
+    Logger.logMsg("Values:");
     traversedNodes.forEach((e) {
-      Logger.logMsg(e.value());
+      Logger.logMsg("\t${e.value()}");
     });
-    Logger.logMsg("--------------------------------");
   }
 
   /// Traverse each node sequentially.

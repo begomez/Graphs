@@ -1,5 +1,4 @@
 import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
-import 'package:graphs/data_structs/binary_nodes/simple_binary_node.dart';
 import 'package:graphs/data_structs/graphs/base/ibase_graph.dart';
 import 'package:graphs/data_structs/node_parser.dart';
 import 'package:graphs/utils/io_utils.dart';
@@ -13,9 +12,9 @@ class BinaryGraph extends IBaseGraph<IBinaryNode> {
     NodeParser parser = const NodeParser(),
     IOWrapper wrapper = const IOWrapper(),
   }) {
-    String strNodes = wrapper.getFileContents(fileName: fileName);
+    String strJson = wrapper.getFileContents(fileName: fileName);
 
-    List<SimpleBinaryNode> nodes = parser.parseSimpleBinaryNodes(strNodes);
+    List<IBinaryNode> nodes = parser.parseSimpleBinaryNodes(strJson);
 
     return BinaryGraph(nodes);
   }

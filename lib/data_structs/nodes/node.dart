@@ -1,4 +1,4 @@
-import 'package:graphs/data_structs/nodes/inode.dart';
+import 'package:graphs/data_structs/nodes/base/inode.dart';
 
 class Node extends INode {
   final int data;

@@ -23,7 +23,7 @@ abstract class _IOUtils {
     // Read the contents of the file
     try {
       contents = file.readAsStringSync();
-      Logger.logMsg(contents);
+      Logger.logMsg("Graph:\n$contents");
     } on Exception catch (e) {
       contents = "";
       Logger.logError(e);

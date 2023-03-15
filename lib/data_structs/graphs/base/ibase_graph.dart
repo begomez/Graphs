@@ -1,6 +1,8 @@
 import 'package:graphs/utils/logger.dart';
 
-/// Base collection of  nodes
+/// Base collection of nodes
+/// Generic class that takes a type param:
+/// - T, data type for nodes contained in the graph
 class IBaseGraph<T> {
   final List<T> nodes;
 

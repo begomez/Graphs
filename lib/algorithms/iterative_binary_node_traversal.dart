@@ -6,8 +6,9 @@ import 'package:graphs/data_structs/binary_nodes/base/ibinary_node.dart';
 import 'package:graphs/data_structs/queues/queue_item.dart';
 
 /// Class encapsulating binary nodes traversal through iterations
-class IterativeBinaryTraversal extends ITraversalAlgorithm<IBinaryNode> {
-  IterativeBinaryTraversal({required IBaseGraph graph}) : super(graph: graph);
+class IterativeBinaryNodeTraversal extends ITraversalAlgorithm<IBinaryNode> {
+  IterativeBinaryNodeTraversal({required IBaseGraph graph})
+      : super(graph: graph);
 
   /// Traverse each node sequentially.
   /// @return: minimum number of nodes that must be visited in the shortest path

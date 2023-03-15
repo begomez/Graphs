@@ -1,6 +1,6 @@
 import 'package:graphs/data_structs/graphs/graph.dart';
 import 'package:graphs/data_structs/node_parser.dart';
-import 'package:graphs/data_structs/nodes/inode.dart';
+import 'package:graphs/data_structs/nodes/base/inode.dart';
 import 'package:graphs/data_structs/nodes/node.dart';
 import 'package:graphs/utils/io_utils.dart';
 import 'package:mocktail/mocktail.dart';
